@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Gilroy, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: #f0efef;
+}
+
+h1 {
+  font-family: "Noto Serif Display", serif;
+  font-size: clamp(15px, 1.5vw, 5rem);
+  font-weight: 900;
+  line-height: clamp(15px, 1.3vw, 5vw);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: "Oswald", sans-serif;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
