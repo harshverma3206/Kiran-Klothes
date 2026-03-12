@@ -41,8 +41,8 @@ const Hero = () => {
         ref={videoRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className='w-[70%] rounded-[4rem]'
-        src=""
+        className='w-[90%]  lg:w-[70%] lg:rounded-[3rem] rounded-4xl'
+        src="./Video01.mp4"
         loop
         muted
       ></video>

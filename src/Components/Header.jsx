@@ -23,9 +23,13 @@ const Header = () => {
     useGSAP(() => {
 
         animationTimeline.from(logoRef.current, {
-            scale: 13,
-            x: 810,
-            y: 440,
+            scale: () => {
+                const scale = window.innerWidth / 160;
+                return Math.max(12, Math.min(scale, 18));
+            },
+            x: "41vw",
+            y: "46vh",
+            transformOrigin: "center center"
         })
 
         animationTimeline.from(iconsRef.current, {
@@ -37,7 +41,8 @@ const Header = () => {
     }, [])
 
     return (
-        <div className='p-5! md:py-7! lg:px-18! md:px-10! flex items-center justify-between fixed top-0 w-full backdrop-blur-md'>
+        <div className='p-5! md:py-7! lg:px-18! md:px-10! flex items-center justify-between fixed top-0 w-full backdrop-blur-md z-50'>
+
             <Link to="/">
                 <h1 ref={logoRef} className=''>Kiran<br />Klothes</h1>
             </Link>
