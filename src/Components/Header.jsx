@@ -17,22 +17,34 @@ import { IoMdMore } from "react-icons/io";
 
 const Header = () => {
 
+    const sectionRef = useRef();
     const logoRef = useRef()
     const iconsRef = useRef([])
 
     useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: logoRef.current,
+                start: "50% 50%",
+                end: "50% 0%",
+                scrub: 1,
+            }
+        });
 
-        animationTimeline.from(logoRef.current, {
+        tl.from(logoRef.current, {
             scale: () => {
-                const scale = window.innerWidth / 160;
-                return Math.max(12, Math.min(scale, 18));
+                const w = window.innerWidth;
+                const scale = w / 85;
+                return Math.max(3, Math.min(scale, 11));
             },
-            x: "41vw",
-            y: "46vh",
-            transformOrigin: "center center"
+            x: "35vw",
+            y: "43vh",
+            ease: "none",
+            duration: 1,
+            transformOrigin: "center center",
         })
 
-        animationTimeline.from(iconsRef.current, {
+        tl.from(iconsRef.current, {
             y: -20,
             autoAlpha: 0,
             stagger: 0.15,
@@ -40,8 +52,9 @@ const Header = () => {
         })
     }, [])
 
+
     return (
-        <div className='p-5! md:py-7! lg:px-18! md:px-10! flex items-center justify-between fixed top-0 w-full backdrop-blur-md z-50'>
+        <div ref={sectionRef} className='p-5! md:py-7! lg:px-18! md:px-10! flex items-center justify-between fixed top-0 w-full backdrop-blur-md z-50'>
 
             <Link to="/">
                 <h1 ref={logoRef} className=''>Kiran<br />Klothes</h1>

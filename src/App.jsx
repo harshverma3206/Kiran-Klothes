@@ -47,6 +47,8 @@ const App = () => {
         </Routes>
       </main>
       {/* <Footer /> */}
+      <div className='h-screen w-screen'></div>
+      <div className='h-screen w-screen'></div>
     </div>
   )
 }
