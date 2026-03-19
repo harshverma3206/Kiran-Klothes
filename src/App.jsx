@@ -3,7 +3,7 @@ import Lenis from "lenis";
 import { Route, Routes } from "react-router-dom";
 
 
-import Hero from "./Pages/Hero"
+import Hero from "./Pages/Hero/Hero"
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

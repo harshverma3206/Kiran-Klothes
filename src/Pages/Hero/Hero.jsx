@@ -1,10 +1,11 @@
 import React, { useRef } from 'react'
 
 import { Link } from 'react-router-dom'
-import { animationTimeline } from "../utils/animationTimeline";
+import { animationTimeline } from "../../utils/animationTimeline";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Recent from './Recent';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -33,7 +34,7 @@ const Hero = () => {
       scrollTrigger: {
         trigger: videoRef.current,
         start: '50% 100%',
-        end: '50% 50%',
+        end: '50% 60%',
         markers: true,
         scrub: 1,
       }
@@ -52,13 +53,15 @@ const Hero = () => {
         loop
         muted
       ></video>
-      <div className='w-[90%] lg:w-[65%] p-5! lg:px-10! flex lg:gap-7 gap-4 text-[.8rem] lg:text-[1rem] flex-wrap'>
+      <div className='w-[90%] lg:w-[65%] p-5! lg:px-15! flex lg:gap-7 gap-4 text-[.8rem] lg:text-[1.3rem] flex-wrap'>
         <Link to="/wishlist">All Products</Link>
         <Link to="/wishlist">Best Seller</Link>
         <Link to="/wishlist">New Arrival</Link>
         <Link to="/wishlist">Kurta</Link>
         <Link to="/wishlist">Kurti</Link>
       </div>
+
+      <Recent />
     </div>
   )
 }
